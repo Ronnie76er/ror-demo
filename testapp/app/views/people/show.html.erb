@@ -5,6 +5,17 @@
   <%= @person.name %>
 </p>
 
+<h2>Add info:</h2>
+<%= form_for([@person, @person.person_info.build]) do |f| %>
+	<div>
+		<%= f.label :person_info %><br/>
+		<%= f.text_field :person_info %>
+	</div>
+	<div class='actions'>
+		<%= f.submit %>
+	</div>
+
+<% end %>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>
